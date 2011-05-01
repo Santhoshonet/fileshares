@@ -47,9 +47,9 @@ $(document).ready(function () {
         'multi': true,
         'auto': true,
         'script': 'receivefile',
-        'uploader': '../Images/uploadify.swf',
+        'uploader': '~/Images/uploadify.swf',
         'folder': '',
-        'cancelImg': '../Images/cancel.png',
+        'cancelImg': '~/Images/cancel.png',
         'scriptData': { 'selected_folder': $.trim($('.foldername').html()) ,'authenticity_token': $.trim($('.token').html())},
         onComplete: function (event, queueID, fileObj, response, data) {
             IsFilesAlreadyLoaded = false;
