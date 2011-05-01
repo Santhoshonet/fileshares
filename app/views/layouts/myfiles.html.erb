@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>My files - File shares</title>
+    <%= stylesheet_link_tag "reset" %>
+    <%= stylesheet_link_tag "style" %>
+    <%= stylesheet_link_tag "uploadify" %>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                   File shares
+                </h1>
+            </div>
+            <div class="FlashInfo">
+                <% unless session[:flashinfo].nil? %>
+                <label>
+                     <%= session[:flashinfo].to_s %>
+                     <% session[:flashinfo] = nil %>
+                </label>
+                <% end %>
+            </div>
+            <%= render :partial => "layouts/logindisplay" %> 
+            <div class="clear hideSkiplink">
+                <div class="menu">
+                    <ul>
+                        <li><%= link_to "Upload", :controller => "myfiles", :action => "upload" %></li>
+                        <li><%= link_to "Download", :controller => "myfiles",  :action => "download" %></li>
+                        <li></li>
+                        <li class="clearfix"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+           <%= yield %>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+</body>
+</html>

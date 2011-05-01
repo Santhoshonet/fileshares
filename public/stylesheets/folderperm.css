@@ -1,0 +1,64 @@
+.LeftBox, .RightBox
+{
+    width: 300px;
+    float: left;
+}
+
+.ListOfUsers
+{
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin: 0px;
+}
+
+.MiddleBox
+{
+    float: left;
+    width: 55px;
+    margin-top: 40px;
+}
+
+input[type="submit"]
+{
+    width: 40px;
+    margin: 5px;
+    height: 30px;
+}
+
+.downloads li
+{
+    height: 230px;
+}
+
+.cmdbutton
+{
+    
+}
+
+.btnupdatepermissions
+{
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.btnupdatepermissions:hover
+{
+    padding: 5px;
+}
+
+.cmdbutton
+{
+    padding: 10px;
+}
+
+.cmdbutton a
+{
+    padding:5px;
+    border: 1px solid #ccc;
+}
+
+.cmdbutton a:hover
+{
+    padding: 5px;
+}

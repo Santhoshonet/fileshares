@@ -1,0 +1,55 @@
+
+    <% if @status == 1 %>
+        <!-- Your file list - start -->
+        <% if @myfiles.count > 0 %>
+        <h4>
+            Files you have access to.</h4>
+        <ul class="downloads">
+            <% @myfiles.each do |file| %>
+            <li>
+                <img src='<%= "../../images/fileicons/" + File.extname(file.name)[1..3] + ".png" %>'
+                    alt='' />
+                <a href="<%= "/" + file.downloadid.to_s + "/" + file.name  %>"><%= file.name %></a>
+                <span>File Size:
+                        <% if file.length < 1024 %>
+                            <%= file.length %> B
+                        <% elsif file.length  < 1048576  %>
+                            <%= sprintf("%.2f", (file.length.to_f/1024).to_s) %> KB
+                        <% else %>
+                            <%= sprintf("%.2f",((file.length.to_f/1024)/1024).to_s) %> MB
+                        <% end %>
+                </span>
+            </li>
+            <% end %>
+        </ul>
+        <!-- Your file list - end -->
+        <ul class="downloads">
+            <li>
+                <table width="100%">
+                    <tr>
+                        <td style="width: 25%; text-align: left;">
+                            <% if @pageindex > 0 %>
+                                <a href="/myfiles/download/<%= (@pageindex / @nooflinksperpage) %>" id="downloadPrev">Prev</a>
+                            <% end %>
+                        </td>
+                        <td style="width: 50%; text-align: center;">
+                        </td>
+                        <td style="width: 25%; text-align: right;">
+                            <% if @totalfiles > @pageindex + @nooflinksperpage %>
+                                <a href="/myfiles/download/<%= (@pageindex / @nooflinksperpage)+2 %>" id="downloadnext" style="margin-right:40px;">Next</a>
+                            <% end %>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <input type="hidden" id="StatusIndex" value='0' />
+        <% else %>
+            there is no files avaialble for download!
+        <% end %>
+    <% else %>
+        <h2>You do not have permission to download files.</h2>
+    <% end %>
+
+    <%= javascript_include_tag "jquery-1.4.1.min" %>
+    <%= javascript_include_tag "enablemenu" %>

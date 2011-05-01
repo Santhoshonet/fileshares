@@ -1,0 +1,2 @@
+control panel - folder and file permissions.
+download files - public or private setting.

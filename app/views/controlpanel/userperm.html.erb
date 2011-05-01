@@ -1,0 +1,35 @@
+<% form_tag(:controller => "controlpanel", :action => "updateuserperm") do |f| %>
+    <%= stylesheet_link_tag "folderperm" %>
+    <h4>Set your user permission for <b><%= @selecteduser %></b>.</h4>
+    <!-- Your file list - start -->
+    <ul class="downloads">
+        <li>
+            <div class="LeftBox">
+                <h4>Available Folders</h4>
+                <select multiple="true" class="ListOfUsers">
+                    <% @availablefolders.each do |directory| %>
+                        <option title="<%= directory.name %>" ><%= directory.name %> </option>
+                    <% end %>
+                </select>
+            </div>
+            <div class="MiddleBox">
+                <div class="cmdbutton"><a href="#">>>|</a></div>
+                <div class="cmdbutton"><a href="#">&nbsp;>></a></div>
+                <div class="cmdbutton"><a href="#"><<&nbsp;</a></div>
+                <div class="cmdbutton"><a href="#">|<<</a></div>
+            </div>
+            <div class="RightBox">
+                <h4>Selected Folders</h4>
+                <select multiple="true" class="ListOfUsers">
+                    <% @selectedfolders.each do |directory| %>
+                        <option title="<%= directory.name %>" ><%= directory.name %> </option>
+                    <% end %>
+                </select>
+            </div>
+            <div class="clearfix"></div>
+        </li>
+        <li>
+            <a href="#" onclick="document.forms[0].submit()" class="btnupdatepermissions"> Update Permissions </a>
+        </li>
+    </ul>
+<% end %>

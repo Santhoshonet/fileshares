@@ -1,0 +1,67 @@
+<% if @status == 1 %>
+    <%= javascript_include_tag "ZeroClipboard" %>
+    <%= javascript_include_tag "jquery-1.4.1.min" %>
+    <%= javascript_include_tag "jquery-ui-personalized-1.5.2.packed" %>
+    <%= javascript_include_tag "swfobject" %>
+    <%= javascript_include_tag "jquery.uploadify.v2.1.0.min" %>
+    <%= javascript_include_tag "sprinkle" %>
+    <script language="javascript" type="text/javascript">
+            $(function() {
+                $('.menu ul li').eq(0).find('a').addClass('selected');
+                $('.menu ul li').eq(0).find('a').attr('href','#');
+            });
+    </script>
+    <% unless session[:folder].nil? %>
+        <h2>
+            Upload your file(s).
+        </h2>
+        <%= form_tag '/myfiles/receivefile', :multipart => true do %>
+        <div id="simpletab" class="tabcontainer">
+            <input type="file" id="Uploader" />
+            <div class="uploadedfilelist" id="clipboard">
+                <div class="uploadedfilelistmenu" id="copytoclipboard">
+                  <%= image_tag "copytoclipboard.png" %>
+                    <a href="#" id="CopyLinkstoClip">Copy links to clipboard</a>
+                </div>
+                <ul>
+                </ul>
+            </div>
+            <div class="statusmessage">
+                <!-- Success messages - start-->
+                <div class="successmessage">
+                    <%= image_tag "success.png" %>
+                    <span></span>
+                </div>
+                <!-- Success messages - end-->
+            </div>
+            <div id="download" class="tabdiv" index='0'>
+            </div>
+            <div id="auth">
+            </div>
+            <div class="token">
+              <%= form_authenticity_token %>
+            </div>
+            <div class="foldername">
+              <%= Directory.find(session[:folder].to_s).name %>
+            </div>
+        </div>
+        <% end %>
+    <% else %>
+    <!-- Invalid domain text - start -->
+        <div class="content">
+            Ooops !, Invaild folder name found.
+            <br />
+            Please try with a valid folder name like {your site url}/{your folder}
+        </div>
+        <!-- Invalid domain text - End -->
+    <% end %>
+<% else %>
+    <%= javascript_include_tag "jquery-1.4.1.min" %>
+    <h2>You do not have permission upload files.</h2>
+<% end %>
+    <script language="javascript" type="text/javascript">
+            $(function() {
+                $('.menu ul li').eq(0).find('a').addClass('selected');
+                $('.menu ul li').eq(0).find('a').attr('href','#');
+            });
+    </script>

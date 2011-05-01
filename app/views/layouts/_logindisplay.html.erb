@@ -1,0 +1,13 @@
+ <div class="loginDisplay">
+    <% unless session[:currentuser].nil? %>
+        <% user = User.find(session[:currentuser])  %>
+        <%= user.name %> |
+        <% if user.isadmin %>
+            <%= link_to "Control panel", :controller => "controlpanel", :action =>  "admin" %> |
+        <% end %>
+        <%= link_to "Change password", :controller => "account", :action => "changepassword" %> |
+        <%= link_to "Log out", :controller => "account", :action => "logout" %>
+    <% else %>
+        <%= link_to "Log In", :controller => "account", :action => "login" %>
+    <% end %>
+</div>

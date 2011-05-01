@@ -1,0 +1,101 @@
+   <% if @status == 1 %>
+    <div id="simpletab" class="tabcontainer">
+        <ul class="tabnav">
+            <li><a href="#domains">Folders</a></li>
+            <li><a href="#users" id="downloadfiles">Users</a></li>
+        </ul>
+        <div id="domains" class="tabdiv">
+            <h4>List of available folders</h4>
+            <ul class="downloads">
+                <li>
+                    <%= image_tag "add.png" %>
+                    <input type="text" id="Txtnewfolder" name="foldername" />
+                    <a href="#" id="newfolderlink">Add new folder</a>
+                </li>
+                <% Directory.order(:id).each do |directory| %>
+                    <li url='' domain=''>
+                        <%= image_tag "fileicons/Folder.jpg" %>
+                        <a href='/FolderPerm/<%= directory.name %>'><%= directory.name%></a>
+                        <span>
+                            <%= image_tag "page_white_edit.png", :style => "height: auto; width:auto" %>
+                            <a href="#" class="EditDirectory">Edit</a>
+                            <%= image_tag "page_white_delete.png", :style => "height:auto; width:auto;margin-left: 20px;" %>
+                            <a href="#" style="margin-right: 20px;" class="DeleteDirectory">Delete</a>
+                            <%= directory.myfiles.count %> files
+                        </span>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <div id="users" class="tabdiv">
+            <h4>List of contributors</h4>
+            <ul class="downloads">
+                <li>
+                    <%= image_tag "add.png" %>
+                    <input type="text" id="Txtnewuser" name="username" />
+                    <a href="#" id="newuserlink">Add new user</a>
+                </li>
+                <% User.order(:id).each do |user|
+                    if user.ishevendor == false and user.id != session[:currentuser]  %>
+                    <li>
+                        <%= image_tag "avatar.png" %>
+                        <a href='/UserPerm/<%= user.name %>'><%= user.name%></a>
+                        <span>
+                            <% if user.isadmin == true %>
+                                <input type="checkbox" class="chkadmin" checked="checked" />
+                            <% else %>
+                                <input type="checkbox" class="chkadmin" />
+                            <% end %>
+                            <label class="lbladmin">Admin</label>
+                            <% if user.uploadaccess == true %>
+                                <input type="checkbox" class="chkupload" checked="checked" />
+                            <% else %>
+                                <input type="checkbox" class="chkupload" />
+                            <% end %>
+                            <label class="lblupload">Upload</label>
+                            <% if user.downloadaccess == true %>
+                                <input type="checkbox" class="chkdownload" checked="checked" />
+                            <% else %>
+                                <input type="checkbox" class="chkdownload" />
+                            <% end %>
+                            <label class="lbldownload">Download</label>
+                            <% if user.deleteaccess == true %>
+                                <input type="checkbox" class="chkdelete" checked="checked" />
+                            <% else %>
+                                <input type="checkbox" class="chkdelete" />
+                            <% end %>
+                            <label class="lbldelete">Delete</label>
+                            <% if user.renameaccess == true %>
+                                <input type="checkbox" class="chkrename" checked="checked" />
+                            <% else %>
+                                <input type="checkbox" class="chkrename" />
+                            <% end %>
+                            <label class="lblrename">Rename</label>
+                            <%= image_tag "page_white_edit.png", :style => "height: auto; width: auto;" %>
+                            <a href="#" class="UpdateUser">Update</a>
+                            <%= image_tag "page_white_delete.png", :style => "height: auto; width: auto;margin-left: 20px;" %>
+                            <a href="#" style="margin-right: 20px;" class="DeleteUser">Delete</a>
+                        </span>
+                    </li>
+                <% end %>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    <div class="statusmessage">
+        <!-- Error messages - start-->
+        <div class="errormessage">
+            <%= image_tag "error.png" %>
+            <span></span>
+        </div>
+        <!-- Error messages - end-->
+    </div>
+    <div class="HiddenDiv">
+    </div>
+    <%= javascript_include_tag "jquery-1.4.1.min" %>
+    <%= javascript_include_tag "jquery-ui-personalized-1.5.2.packed" %>
+    <%= javascript_include_tag "ControlPanel" %>
+    <%= javascript_include_tag "UserInteractions" %>
+  <% else %>
+         <h2>You do not have permission for control panel.</h2>
+  <% end %>

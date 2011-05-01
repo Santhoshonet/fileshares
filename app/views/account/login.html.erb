@@ -1,0 +1,34 @@
+<% form_tag(:action => "login") do |f| %>
+    <h2>
+        Log In
+    </h2>
+    <p class="ErrorInfo">
+        <%= @error%>
+    </p>
+    <div class="accountInfo">
+        <p>
+            <Label>Username:</Label>
+            <input type="text" name="username" />
+        </p>
+        <p>
+            <Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</Label>
+            <input type="password" name="password" />
+        </p>
+        <p>
+            <Label>Select Folder:</Label><br />
+            <select style="padding-top:5px;padding-bottom:5px;width:415px;" name="foldername">
+              <% Directory.all.each do |directory| %>
+                <option value="<%= directory.name %>"><%= directory.name %></option>
+              <% end %>
+            </select>
+        </p>
+        <p>
+            <div class="submitbutton">
+              <a href="#" onclick="document.forms[0].submit()" > Log In </a>
+            </div>
+            <input type="submit" value="Log In" style="display:none;" />
+        </p>
+    </div>
+<% end %>
+<%= javascript_include_tag "jquery-1.4.1.min" %>
+<%= javascript_include_tag "UserInteractions" %>

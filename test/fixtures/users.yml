@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  password: MyString
+  isadmin: false
+  ishevendor: false
+  uploadaccess: false
+  downloadaccess: false
+  deleteaccess: false
+  renameaccess: false
+
+two:
+  name: MyString
+  password: MyString
+  isadmin: false
+  ishevendor: false
+  uploadaccess: false
+  downloadaccess: false
+  deleteaccess: false
+  renameaccess: false
