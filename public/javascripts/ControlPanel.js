@@ -29,7 +29,7 @@ $(function () {
                         var url = data.toString().substr(data.toString().indexOf("folderurl#") + 10);
                         //url = url.toString().substr(0,url.toString().indexOf("#folderurl"));
                         //alert(url);
-                        TextBox.parents('ul').eq(0).append('<li><img src="../../Images/fileicons/folder.jpg" alt="" /><a href="' + url +  '">' + foldername + '</a><span><img src="../Images/page_white_edit.png" alt="" style="height: auto; width: auto;" /><a href="#" class="EditDirectory">Edit</a><img src="../Images/page_white_delete.png" alt="" style="height: auto; width: auto;margin-left:20px;" /><a href="#" style="margin-right:20px;" class="DeleteDirectory">Delete</a> 0 files</span></li>');
+                        TextBox.parents('ul').eq(0).append('<li><img src="../../images/fileicons/folder.jpg" alt="" /><a href="' + url +  '">' + foldername + '</a><span><img src="../../images/page_white_edit.png" alt="" style="height: auto; width: auto;" /><a href="#" class="EditDirectory">Edit</a><img src="../../images/page_white_delete.png" alt="" style="height: auto; width: auto;margin-left:20px;" /><a href="#" style="margin-right:20px;" class="DeleteDirectory">Delete</a> 0 files</span></li>');
                         folderoperations();
                     }
                     else {
@@ -192,7 +192,7 @@ $(function () {
                     if (data.toString().indexOf('true') > -1) {
                         var url = data.toString().substr(data.toString().indexOf("url#") + 4);
                         //url = url.toString().substr(0,url.toString().indexOf("#url"));
-                        TextBox.parents('ul').eq(0).append('<li><img src="../Images/avatar.png" alt="" /><a href="' + url + '" >' + username + '</a> <span><input type="checkbox" class="chkadmin" /><label class="lbladmin">Admin</label><input type="checkbox" class="chkupload" /><label class="lblupload">Upload</label><input type="checkbox" class="chkdownload" /><label class="lbldownload">Download</label><input type="checkbox" class="chkdelete" /><label class="lbldelete">Delete</label><input type="checkbox" class="chkrename" /><label class="lblrename">Rename</label><img src="../Images/page_white_edit.png" alt="" style="height: auto; width: auto;" /><a href="#" class="UpdateUser">Update</a><img src="../Images/page_white_delete.png" alt="" style="height: auto; width: auto;margin-left:20px;" /><a href="#" style="margin-right:20px;" class="DeleteUser">Delete</a></span> </li>');
+                        TextBox.parents('ul').eq(0).append('<li><img src="../../images/avatar.png" alt="" /><a href="' + url + '" >' + username + '</a> <span><input type="checkbox" class="chkadmin" /><label class="lbladmin">Admin</label><input type="checkbox" class="chkupload" /><label class="lblupload">Upload</label><input type="checkbox" class="chkdownload" /><label class="lbldownload">Download</label><input type="checkbox" class="chkdelete" /><label class="lbldelete">Delete</label><input type="checkbox" class="chkrename" /><label class="lblrename">Rename</label><img src="../../images/page_white_edit.png" alt="" style="height: auto; width: auto;" /><a href="#" class="UpdateUser">Update</a><img src="../../images/page_white_delete.png" alt="" style="height: auto; width: auto;margin-left:20px;" /><a href="#" style="margin-right:20px;" class="DeleteUser">Delete</a></span> </li>');
                         useroperations();
                     }
                     else {

@@ -36,7 +36,7 @@ $(document).ready(function () {
     });
     function loadfiles(direction) {
         var index = $('#download').attr('index');
-        $('#download').html('<img src="/Images/loading.gif" alt="" /> loading files.....');
+        $('#download').html('<img src="/images/loading.gif" alt="" /> loading files.....');
         $('#download').load("/FilesManager/Download?StartIndex=" + index + "&dir=" + direction + "&rnd=" + Math.random(), function () {
             LoginScripts();
             FileNavigationScripts();
@@ -93,7 +93,7 @@ $(document).ready(function () {
     });
     function LoginScripts() {
         $('#SignUpText').click(function () {
-            $('#download').html('<img src="/Images/loading.gif" alt="" /> loading.....');
+            $('#download').html('<img src="/images/loading.gif" alt="" /> loading.....');
             $('#download').load("/Authentication/Signup", function () {
                 RegisterScripts();
             });
@@ -131,7 +131,7 @@ $(document).ready(function () {
                 success: function (data) {
                     if (data == "True" || data == "") {
                         var index = $('#download').attr('index');
-                        $('#download').html('<img src="/Images/loading.gif" alt="" /> Registration completed successfully. loading file list.....');
+                        $('#download').html('<img src="/images/loading.gif" alt="" /> Registration completed successfully. loading file list.....');
                         $('#download').load("/FilesManager/Download?StartIndex=" + index + "&dir=forward", function () {
                             FileNavigationScripts();
                         });
@@ -149,7 +149,7 @@ $(document).ready(function () {
     };
     function RegisterScripts() {
         $('#CancelText').click(function () {
-            $('#download').html('<img src="/Images/loading.gif" alt="" /> loading.....');
+            $('#download').html('<img src="/images/loading.gif" alt="" /> loading.....');
             $('#download').load("/Authentication/Login", function () {
                 LoginScripts();
             });
@@ -201,7 +201,7 @@ $(document).ready(function () {
                 success: function (data) {
                     if (data == "True") {
                         var index = $('#download').attr('index');
-                        $('#download').html('<img src="../../Images/loading.gif" alt="" /> Registration completed successfully. loading file list.....');
+                        $('#download').html('<img src="../../images/loading.gif" alt="" /> Registration completed successfully. loading file list.....');
                         $('#download').load("/FilesManager/Download?StartIndex=" + index + "&dir=forward", function () {
                             FileNavigationScripts();
                         });
