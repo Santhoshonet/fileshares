@@ -49,7 +49,7 @@ $(document).ready(function () {
         'script': 'receivefile',
         'uploader': '/uploadify.swf',
         'folder': '',
-        'cancelImg': '/Images/cancel.png',
+        'cancelImg': '../../images/cancel.png',
         'scriptData': { 'selected_folder': $.trim($('.foldername').html()) ,'authenticity_token': $.trim($('.token').html())},
         onComplete: function (event, queueID, fileObj, response, data) {
             IsFilesAlreadyLoaded = false;
