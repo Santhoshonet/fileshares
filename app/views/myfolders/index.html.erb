@@ -1,0 +1,45 @@
+<% if @status == 1 %>
+    <!-- Your file list - start -->
+    <% if @dirs.count > 0 %>
+    <h4>
+        Files you have access to.</h4>
+    <ul class="downloads">
+        <% @dirs.each do |dir| %>
+        <li>
+            <%= image_tag "fileicons/Folder.jpg" %>
+            <a href="<%= dir.name + "/list" %>"><%= dir.name %></a>
+            <span><%= Myfile.find_all_by_directory_id(dir.id).count %> Files</span>
+        </li>
+        <% end %>
+    </ul>
+    <!-- Your file list - end -->
+    <ul class="downloads">
+        <li>
+            <table width="100%">
+                <tr>
+                    <td style="width: 25%; text-align: left;">
+                        <% if @pageindex > 0 %>
+                            <a href="/myfolders/download/<%= (@pageindex / @noofdirsperpage) %>" id="downloadPrev">Prev</a>
+                        <% end %>
+                    </td>
+                    <td style="width: 50%; text-align: center;">
+                    </td>
+                    <td style="width: 25%; text-align: right;">
+                        <% if @totalfiles > @pageindex + @noofdirsperpage %>
+                            <a href="/myfolders/download/<%= (@pageindex / @noofdirsperpage)+2 %>" id="downloadnext" style="margin-right:40px;">Next</a>
+                        <% end %>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    <input type="hidden" id="StatusIndex" value='0' />
+    <% else %>
+        there is no folders avaialble!
+    <% end %>
+<% else %>
+    <h2>You do not have permission.</h2>
+<% end %>
+
+<%= javascript_include_tag "jquery-1.4.1.min" %>
+<%= javascript_include_tag "enablemenu" %>

@@ -1,4 +1,6 @@
 FtpManager::Application.routes.draw do
+  get "myfolders/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +50,6 @@ FtpManager::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   match '/receivefile', :controller => "myfiles", :action => "receivefile"
-  match ":controller/:action"
   match '/KeepSessionAlive', :controller => "account", :action => "keepsessionalive"
 
   match '/CreateFolder/:folder', :controller => "controlpanel", :action => "createfolder"
@@ -61,11 +62,15 @@ FtpManager::Application.routes.draw do
   match '/UpdateUser', :controller => "controlpanel", :action => "updateuser"
   match '/DeleteUser/:username', :controller => "controlpanel", :action => "deleteuser"
   match '/ModifyFolder/:new/:old', :controller => "controlpanel", :action => "modifyfolder"
-  match '/:fileid/:filename', :controller => "myfiles", :action => "getfile"
+
+  match '/file/:fileid/:filename', :controller => "myfiles", :action => "getfile"
 
   match '/myfiles/download/:pageindex', :controller => "myfiles", :action => "download"
+  match ':foldername/files', :controller => "myfiles", :action => "download"
 
-  root :controller => "myfiles", :action => "upload"
+  match ":controller/:action"
+  
+  root :controller => "myfolders", :action => "index"
 
   # See how all your routes lay out with "rake routes"
 

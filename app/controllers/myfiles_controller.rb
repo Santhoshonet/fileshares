@@ -4,8 +4,13 @@ class MyfilesController < ApplicationController
   before_filter :checkuploadpermission, :except => ["download", "receivefile","getfile"]
   before_filter :checkdownloadpermission, :except => ["upload", "getfile","receivefile"]
   def download
+    if params[:id].nil?
+        folderid = session[:folder]
+    else
+        folderid = params[:id]
+    end
     @status = 1
-    @nooflinksperpage = 20
+    @nooflinksperpage = 10
     @pageindex = 0
     unless params[:pageindex].nil?
       @pageindex = (params[:pageindex].to_i-1) * @nooflinksperpage
@@ -13,8 +18,8 @@ class MyfilesController < ApplicationController
         @pageindex = 0
       end
     end
-    @myfiles = Myfile.find_all_by_directory_id(session[:folder], :limit => 20, :offset => @pageindex, :order => "id desc")
-    @totalfiles = Myfile.find_all_by_directory_id(session[:folder]).count
+    @myfiles = Myfile.find_all_by_directory_id(folderid, :limit => 20, :offset => @pageindex, :order => "id desc")
+    @totalfiles = Myfile.find_all_by_directory_id(folderid).count
   end
 
   def upload
