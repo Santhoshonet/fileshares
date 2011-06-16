@@ -70,7 +70,7 @@ FtpManager::Application.routes.draw do
 
   match ":controller/:action"
   
-  root :controller => "myfolders", :action => "index"
+  root :controller => "myfiles", :action => "download"
 
   # See how all your routes lay out with "rake routes"
 
