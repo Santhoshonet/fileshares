@@ -18,7 +18,7 @@ class MyfilesController < ApplicationController
         @pageindex = 0
       end
     end
-    @myfiles = Myfile.find_all_by_directory_id(folderid, :limit => @nooflinksperpage, :offset => @pageindex, :order => "id desc")
+    @myfiles = Myfile.find_all_by_directory_id(folderid, :limit => @nooflinksperpage, :offset => @pageindex, :order => "id desc", :select => "name,downloadid,length")
     @totalfiles = Myfile.find_all_by_directory_id(folderid).count
   end
 
