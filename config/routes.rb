@@ -65,7 +65,10 @@ FtpManager::Application.routes.draw do
 
   match '/file/:fileid/:filename', :controller => "myfiles", :action => "getfile"
 
-  match '/myfiles/download/:pageindex', :controller => "myfiles", :action => "download"
+  match '/myfiles/download(/:pageindex)', :controller => "myfiles", :action => "download"
+
+  match '/myfiles/delete/:fileid', :controller => "myfiles", :action => "delete"
+
   match ':foldername/files', :controller => "myfiles", :action => "download"
 
   match ":controller/:action"

@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
       redirect_to :controller => "account", :action => "login"
     end
   end
+
   def checkpermission(permission)
     if session[:currentuser].nil?
       return false
@@ -20,6 +21,8 @@ class ApplicationController < ActionController::Base
       return user.uploadaccess
     elsif permission.to_s.strip == "download"
       return user.downloadaccess
+    elsif permission.to_s.strip == "delete"
+      return user.deleteaccess
     end
       false
   end
@@ -31,16 +34,25 @@ class ApplicationController < ActionController::Base
       render 'controlpanel/admin'
     end
   end
+
   def checkuploadpermission
     unless checkpermission("upload")
       @status = 0
       render 'myfiles/upload'
     end
   end
+
   def checkdownloadpermission
     unless checkpermission("download")
       @status = 0
       render 'myfiles/download'
     end
   end
+
+  def checkdeletepermission
+    unless checkpermission("delete")
+      render :text => "dont have permission to delete the file."
+    end
+  end
+
 end

@@ -1,0 +1,14 @@
+<tr>
+    <td style="width: 25%; text-align: left;">
+        <% if @pageindex > 0 %>
+            <a href="/myfiles/download/<%= (@pageindex / @nooflinksperpage) %>" id="downloadPrev">Prev</a>
+        <% end %>
+    </td>
+    <td style="width: 50%; text-align: center;">
+    </td>
+    <td style="width: 25%; text-align: right;">
+        <% if @totalfiles > @pageindex + @nooflinksperpage %>
+            <a href="/myfiles/download/<%= (@pageindex / @nooflinksperpage)+2 %>" id="downloadnext" style="margin-right:40px;">Next</a>
+        <% end %>
+    </td>
+</tr>

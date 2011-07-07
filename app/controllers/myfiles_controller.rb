@@ -1,8 +1,12 @@
 class MyfilesController < ApplicationController
+
   protect_from_forgery :except => "receivefile"
   before_filter :isuserloggedin, :except => "receivefile"
-  before_filter :checkuploadpermission, :except => ["download", "receivefile","getfile"]
-  before_filter :checkdownloadpermission, :except => ["upload", "getfile","receivefile"]
+  before_filter :checkuploadpermission, :except => ["download", "receivefile","getfile", "delete"]
+  before_filter :checkdownloadpermission, :except => ["upload", "getfile","receivefile", "delete"]
+  before_filter :checkdeletepermission , :except => ["download","upload", "getfile","receivefile"]
+
+
   def download
     if params[:id].nil?
         folderid = session[:folder]
@@ -10,16 +14,32 @@ class MyfilesController < ApplicationController
         folderid = params[:id]
     end
     @status = 1
-    @nooflinksperpage = 10
-    @pageindex = 0
+    nooflinksperpage = 15
+    #@pageindex = 0
+    #unless params[:pageindex].nil?
+    #  @pageindex = (params[:pageindex].to_i-1) * @nooflinksperpage
+    #  if @pageindex < 0
+    #    @pageindex = 0
+    #  end
+    #end
+    @DeletePermission = User.find(session[:currentuser]).deleteaccess
+    nooflinksskipcount = 0
     unless params[:pageindex].nil?
-      @pageindex = (params[:pageindex].to_i-1) * @nooflinksperpage
-      if @pageindex < 0
-        @pageindex = 0
-      end
+       nooflinksskipcount = nooflinksperpage.to_i * params[:pageindex].to_i
     end
-    @myfiles = Myfile.find_all_by_directory_id(folderid, :limit => @nooflinksperpage, :offset => @pageindex, :order => "id desc", :select => "name,downloadid,length")
-    @totalfiles = Myfile.find_all_by_directory_id(folderid).count
+    @myfiles = Myfile.find_all_by_directory_id(folderid, :limit => nooflinksperpage, :offset => nooflinksskipcount, :order => "id desc", :select => "name,downloadid,length,id")
+    #@totalfiles = Myfile.find_all_by_directory_id(folderid).count
+    if nooflinksskipcount > 0
+      render "filelist", :layout => false
+    end
+  end
+
+  def delete
+    unless params[:fileid].nil?
+        file = Myfile.find(params[:fileid].to_i)
+        file.destroy()
+        render :text => "success"
+    end
   end
 
   def upload

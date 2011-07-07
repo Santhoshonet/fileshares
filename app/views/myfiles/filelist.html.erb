@@ -1,0 +1,23 @@
+<ul class="downloads">
+    <% @myfiles.each do |file| %>
+    <li>
+        <img src='<%= "../../images/fileicons/" + File.extname(file.name)[1..3] + ".png" %>' alt='' />
+        <a href="<%= "/file/" + file.downloadid.to_s + "/" + file.name  %>"><%= file.name %></a>
+        <span fileid='<%= file.id %>'>
+            <% if @DeletePermission %>
+                <label class="FileMenu"><%= image_tag "page_white_delete.png" %>Delete</label>
+            <% end %>
+            <label>File Size:</label>
+            <label class="FileSize">
+                <% if file.length < 1024 %>
+                    <%= file.length %> B
+                <% elsif file.length  < 1048576  %>
+                    <%= sprintf("%.2f", (file.length.to_f/1024).to_s) %> KB
+                <% else %>
+                    <%= sprintf("%.2f",((file.length.to_f/1024)/1024).to_s) %> MB
+                <% end %>
+            </label>
+        </span>
+    </li>
+    <% end %>
+</ul>
