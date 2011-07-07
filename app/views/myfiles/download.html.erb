@@ -4,22 +4,26 @@
         <h4>
             Files you have access to.</h4>
         <%= render :template => "myfiles/filelist" %>
-        <ul class="downloads">
-          <li>
-              <table width="100%">
-                <tr class="AjaxLoadingPanel">
-                    <td colspan="3"><div>Loading  <%= image_tag "loading.gif" %></div></td>
-                </tr>
-              </table>            
-          </li>
-        </ul>
+        <% if @myfiles.count > ENV["NoOfFilesPerPage"].to_i %>
+            <ul class="downloads">
+              <li>
+                  <table width="100%">
+                    <tr class="AjaxLoadingPanel">
+                        <td colspan="3"><div>Loading  <%= image_tag "loading.gif" %></div></td>
+                    </tr>
+                  </table>
+              </li>
+            </ul>
+        <% end %>
         <!-- Your file list - end -->
         <input type="hidden" id="StatusIndex" value='0' />
         <%= stylesheet_link_tag "ajaxLoading" %>
         <%= javascript_include_tag "jquery-1.4.1.min" %>
         <%= javascript_include_tag "enablemenu" %>
         <%= javascript_include_tag "UserInteractions" %>
-        <%= javascript_include_tag "filelazyloading" %>
+        <% if @myfiles.count > ENV["NoOfFilesPerPage"].to_i %>
+            <%= javascript_include_tag "filelazyloading" %>
+        <% end %>
         <%= javascript_include_tag "fileoperations" %>
         <% else %>
             there is no files avaialble for download!

@@ -815,6 +815,7 @@ a:hover
     cursor:pointer;
     margin-right: 10px;
     margin-top: 5px;
+    padding:3px;
 }
 .FileMenu img
 {
@@ -823,7 +824,13 @@ a:hover
     padding:0;
     margin-bottom:5px;
     margin-right:3px;
-    margin-left:5px;
+}
+
+.FileMenu:hover
+{
+    background-color:#777;
+    color:#eee;
+
 }
 
 .downloads li span

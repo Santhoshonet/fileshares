@@ -14,7 +14,6 @@ class MyfilesController < ApplicationController
         folderid = params[:id]
     end
     @status = 1
-    nooflinksperpage = 15
     #@pageindex = 0
     #unless params[:pageindex].nil?
     #  @pageindex = (params[:pageindex].to_i-1) * @nooflinksperpage
@@ -25,9 +24,9 @@ class MyfilesController < ApplicationController
     @DeletePermission = User.find(session[:currentuser]).deleteaccess
     nooflinksskipcount = 0
     unless params[:pageindex].nil?
-       nooflinksskipcount = nooflinksperpage.to_i * params[:pageindex].to_i
+       nooflinksskipcount = ENV["NoOfFilesPerPage"].to_i * params[:pageindex].to_i
     end
-    @myfiles = Myfile.find_all_by_directory_id(folderid, :limit => nooflinksperpage, :offset => nooflinksskipcount, :order => "id desc", :select => "name,downloadid,length,id")
+    @myfiles = Myfile.find_all_by_directory_id(folderid, :limit => ENV["NoOfFilesPerPage"].to_i, :offset => nooflinksskipcount, :order => "id desc", :select => "name,downloadid,length,id")
     #@totalfiles = Myfile.find_all_by_directory_id(folderid).count
     if nooflinksskipcount > 0
       render "filelist", :layout => false
