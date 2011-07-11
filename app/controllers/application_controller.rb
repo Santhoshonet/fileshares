@@ -18,8 +18,14 @@ class ApplicationController < ActionController::Base
     elsif permission.to_s.strip == "isvendor"
       return user.ishevendor
     elsif permission.to_s.strip == "upload"
+      if UserDirectoryLink.find_all_by_directory_id_and_user_id(session[:folder].to_i,session[:currentuser].to_i).count == 0
+        return false
+      end
       return user.uploadaccess
     elsif permission.to_s.strip == "download"
+      if UserDirectoryLink.find_all_by_directory_id_and_user_id(session[:folder].to_i,session[:currentuser].to_i).count == 0
+        return false
+      end
       return user.downloadaccess
     elsif permission.to_s.strip == "delete"
       return user.deleteaccess

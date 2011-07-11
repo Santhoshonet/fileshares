@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :downloadaccess
       t.boolean :deleteaccess
       t.boolean :renameaccess
-      t.integer :directory_id
       t.timestamps
     end
   end

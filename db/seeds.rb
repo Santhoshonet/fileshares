@@ -8,7 +8,9 @@ user.isadmin = true
 user.uploadaccess = true
 user.save
 
+
 directory = Directory.new
 directory.name = "root"
 directory.save
+
 

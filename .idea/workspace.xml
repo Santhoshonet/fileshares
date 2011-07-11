@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad59e460-3dfa-48a6-94d2-48898c10e5ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/filelazyloading.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/fileoperations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unusedcode.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/folderpermission.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/json2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/permissions_handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/userpermission.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/myfiles_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/myfiles_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/myfiles/download.html.erb" afterPath="$PROJECT_DIR$/app/views/myfiles/download.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environment.rb" afterPath="$PROJECT_DIR$/config/environment.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/ZeroClipboard.js" afterPath="$PROJECT_DIR$/public/javascripts/ZeroClipboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/controlpanel_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/controlpanel_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/directory.rb" afterPath="$PROJECT_DIR$/app/models/directory.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/controlpanel/folderperm.html.erb" afterPath="$PROJECT_DIR$/app/views/controlpanel/folderperm.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/controlpanel/userperm.html.erb" afterPath="$PROJECT_DIR$/app/views/controlpanel/userperm.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20110419175557_create_directories.rb" afterPath="$PROJECT_DIR$/db/migrate/20110419175557_create_directories.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20110419181048_create_users.rb" afterPath="$PROJECT_DIR$/db/migrate/20110419181048_create_users.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/folderperm.css" afterPath="$PROJECT_DIR$/public/stylesheets/folderperm.css" />
     </list>
     <ignored path="FtpManager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,9 +47,6 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-  <component name="GeneratorOptions">
-    <option name="VCS_SHOW_CONFIRMATION" value="true" />
-  </component>
   <component name="Git.Branch.Configurations">
     <option name="CURRENT" value="master" />
     <option name="CONFIGURATIONS">
@@ -70,22 +74,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/lazyloading.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/myfiles.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_loadingPanel.erb" />
-        <option value="$PROJECT_DIR$/public/stylesheets/ajaxLoading.css" />
-        <option value="$PROJECT_DIR$/unusedcode.erb" />
-        <option value="$PROJECT_DIR$/public/javascripts/filelazyloading.js" />
-        <option value="$PROJECT_DIR$/app/views/myfiles/upload.html.erb" />
-        <option value="$PROJECT_DIR$/public/javascripts/ZeroClipboard.js" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/public/javascripts/fileoperations.js" />
-        <option value="$PROJECT_DIR$/app/views/myfiles/filelist.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/myfiles_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/myfiles/download.html.erb" />
-        <option value="$PROJECT_DIR$/config/environment.rb" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/public/stylesheets/folderperm.css" />
+        <option value="$PROJECT_DIR$/app/views/layouts/controlpanel.html.erb" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20110419175557_create_directories.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20110419181048_create_users.rb" />
+        <option value="$PROJECT_DIR$/app/models/user_directory_link.rb" />
+        <option value="$PROJECT_DIR$/app/models/directory.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/public/javascripts/permissions_handler.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/folderpermission.js" />
+        <option value="$PROJECT_DIR$/app/views/controlpanel/folderperm.html.erb" />
+        <option value="$PROJECT_DIR$/public/javascripts/userpermission.js" />
+        <option value="$PROJECT_DIR$/app/views/controlpanel/userperm.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/controlpanel_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       </list>
     </option>
   </component>
@@ -122,6 +126,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
@@ -144,7 +149,6 @@
         </subPane>
       </pane>
       <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -178,6 +182,48 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="true" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="FtpManager" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="development" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="db:seed" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="FtpManager" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:seed" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
       <RunnerSettings RunnerId="RubyRunner" />
@@ -319,12 +365,14 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Rake.db:reset" />
       <item index="1" class="java.lang.String" itemvalue="Rake.test" />
       <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
       <item index="3" class="java.lang.String" itemvalue="Rails.Production: FtpManager" />
       <item index="4" class="java.lang.String" itemvalue="Rails.Development: FtpManager" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="6" class="java.lang.String" itemvalue="Rake.db:seed" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -352,7 +400,7 @@
     </task>
     <servers />
   </component>
-  <component name="TodoView" selected-index="0">
+  <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -376,14 +424,14 @@
     <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22496474" sideWeight="0.27284768" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16784203" sideWeight="0.40264902" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.72715235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.597351" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -425,98 +473,106 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/sprinkle.js">
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="36" selection-start="1037" selection-end="1037" vertical-scroll-proportion="1.1643835" />
+        <state line="16" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.37362638" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/ajaxLoading.css">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20110419181048_create_users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="16" selection-start="265" selection-end="265" vertical-scroll-proportion="0.46258503" />
+        <state line="11" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.25686812" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/controlpanel/admin.html.erb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20110419180356_create_myfiles.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="-8.10101" />
+        <state line="8" column="26" selection-start="244" selection-end="244" vertical-scroll-proportion="0.18681319" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unusedcode.erb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20110419175557_create_directories.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="558" selection-end="558" vertical-scroll-proportion="0.5522042" />
+        <state line="7" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.16346154" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/ZeroClipboard.js">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="6" selection-start="1461" selection-end="1461" vertical-scroll-proportion="0.67832166" />
+        <state line="2" column="29" selection-start="95" selection-end="95" vertical-scroll-proportion="0.09497207">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/myfiles/upload.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/directory.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="38" selection-start="643" selection-end="643" vertical-scroll-proportion="0.3148148" />
+        <state line="2" column="2" selection-start="59" selection-end="90" vertical-scroll-proportion="0.09497207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user_directory_link.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.093406595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/permissions_handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="60" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.74725276">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/folderpermission.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="11" selection-start="0" selection-end="1196" vertical-scroll-proportion="0.18681319">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="32" selection-start="2591" selection-end="2597" vertical-scroll-proportion="0.5796703" />
+        <state line="60" column="22" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.3228022">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/fileoperations.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/userpermission.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="71" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.8131868" />
+        <state line="7" column="44" selection-start="345" selection-end="360" vertical-scroll-proportion="0.16346154">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/account_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/controlpanel/userperm.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="14" selection-start="1414" selection-end="1435" vertical-scroll-proportion="0.2760989">
+        <state line="2" column="79" selection-start="205" selection-end="205" vertical-scroll-proportion="0.048433047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/controlpanel/folderperm.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="31" selection-start="932" selection-end="932" vertical-scroll-proportion="0.46011397">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="5" selection-start="218" selection-end="218" vertical-scroll-proportion="0.1826923">
+        <state line="25" column="63" selection-start="842" selection-end="842" vertical-scroll-proportion="0.21016483">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/filelazyloading.js">
+    <entry file="file://$PROJECT_DIR$/app/controllers/controlpanel_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="5" selection-start="930" selection-end="930" vertical-scroll-proportion="0.8406593">
+        <state line="147" column="16" selection-start="4978" selection-end="4978" vertical-scroll-proportion="0.51373625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/myfiles/filelist.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/account_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="15" selection-start="30" selection-end="38" vertical-scroll-proportion="0.03269231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environment.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="30" selection-start="185" selection-end="185" vertical-scroll-proportion="0.1401099">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/myfiles_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="29" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.5160839">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/myfiles/download.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="34" selection-start="246" selection-end="246" vertical-scroll-proportion="0.14529915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="825" column="21" selection-start="11282" selection-end="11282" vertical-scroll-proportion="0.7197802">
+        <state line="65" column="0" selection-start="2218" selection-end="2218" vertical-scroll-proportion="0.30357143">
           <folding />
         </state>
       </provider>

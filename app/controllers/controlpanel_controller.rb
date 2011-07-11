@@ -103,14 +103,13 @@ class ControlpanelController < ApplicationController
   end
 
   def userperm
-
     user = User.find_by_name(params[:user])
     unless user.nil?
       @selecteduser = params[:user]
       @availablefolders = []
       @selectedfolders = []
       Directory.all.each do |dir|
-        if dir.users.index(user) == nil
+        if UserDirectoryLink.find_all_by_directory_id_and_user_id(dir.id,user.id).count == 0
           @availablefolders.push(dir)
         else
           @selectedfolders.push(dir)
@@ -119,22 +118,41 @@ class ControlpanelController < ApplicationController
     else
       redirect_to :controller => "controlpanel", :action => "admin"
     end
-
   end
 
   def updateuserperm
-    redirect_to :action => "admin"
+    username = params[:user]
+    unless username.nil?
+      user = User.find_by_name(username)
+      unless user.nil?
+        UserDirectoryLink.find_all_by_user_id(user.id).each do |udlink|
+          udlink.destroy
+        end
+        folders = params[:selectedFolders]
+        unless folders.nil?
+          folders.each do |foldername|
+            folder = Directory.find_by_name(foldername)
+            unless folder.nil?
+              udlink = UserDirectoryLink.new
+              udlink.directory_id = folder.id
+              udlink.user_id = user.id
+              udlink.save
+            end
+          end
+        end
+      end
+    end
+    render :text => "success"
   end
 
   def folderperm
-
     dir = Directory.find_by_name(params[:folder])
     unless dir.nil?
       @selectedfolder = params[:folder]
       @availableusers = []
       @selectedusers = []
       User.all.each do |user|
-        if dir.users.index(user) == nil
+        if UserDirectoryLink.find_all_by_directory_id_and_user_id(dir.id,user.id).count == 0
           @availableusers.push(user)
         else
           @selectedusers.push(user)
@@ -143,11 +161,31 @@ class ControlpanelController < ApplicationController
     else
       redirect_to :controller => "controlpanel", :action => "admin"
     end
-
   end
 
   def updatefolderperm
-    redirect_to :action => "admin"
+    folder = params[:folder]
+    unless folder.nil?
+      dir = Directory.find_by_name(folder)
+      unless dir.nil?
+        UserDirectoryLink.find_all_by_directory_id(dir.id).each do |udlink|
+          udlink.destroy
+        end
+        users = params[:selectedUsers]
+        unless users.nil?
+          users.each do |username|
+            user = User.find_by_name(username)
+            unless user.nil?
+              udlink = UserDirectoryLink.new
+              udlink.directory_id = dir.id
+              udlink.user_id = user.id
+              udlink.save
+            end
+          end
+        end
+      end
+    end
+    render :text => "success"
   end
 
 end
