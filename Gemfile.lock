@@ -71,3 +71,4 @@ PLATFORMS
 DEPENDENCIES
   pg
   rails (= 3.0.3)
+  rake (= 0.8.7)

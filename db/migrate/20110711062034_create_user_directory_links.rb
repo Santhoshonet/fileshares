@@ -3,7 +3,6 @@ class CreateUserDirectoryLinks < ActiveRecord::Migration
     create_table :user_directory_links do |t|
       t.integer :user_id
       t.integer :directory_id
-
       t.timestamps
     end
   end

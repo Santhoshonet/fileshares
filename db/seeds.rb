@@ -13,4 +13,9 @@ directory = Directory.new
 directory.name = "root"
 directory.save
 
+udl = UserDirectoryLink.new
+udl.user_id = user.id
+udl.directory_id = directory.id
+udl.save
+
 

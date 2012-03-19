@@ -5,7 +5,6 @@ development:
   database: FtpManager_development
   pool: 5
   timeout: 5000
-  port: 5555
   username: postgres
   password: password@123
 
@@ -17,7 +16,6 @@ test:
   database: FtpManager_test
   pool: 5
   timeout: 5000
-  port: 5555
   username: postgres
   password: password@123
 
@@ -25,7 +23,6 @@ production:
   adapter: postgresql
   database: FtpManager_production
   pool: 5
-  timeout: 5000
   port: 5555
   username: postgres
   password: password@123

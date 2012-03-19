@@ -29,7 +29,7 @@ class AccountController < ApplicationController
   def login
     if !params[:username].nil? and !params[:password].nil?
       if params[:username].to_s.strip != "" and params[:password].to_s.strip != ""
-        user = User.find_by_name(params[:username].to_s.strip)
+        user = User.find(:first, :conditions => ["lower(name) = ?",params[:username].to_s.strip.downcase])
         unless user.nil?
           if user.password == params[:password].to_s.strip
               session[:currentuser] = user.id

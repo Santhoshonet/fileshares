@@ -47,7 +47,7 @@ class MyfilesController < ApplicationController
 
   def receivefile
     if params[:Filedata].blank?
-      render :text =>  "invalid argumanets found!"
+      render :text =>  "invalid argumenents found!"
     end
     file = Myfile.new
     file.uploaded_file= params[:Filedata]
